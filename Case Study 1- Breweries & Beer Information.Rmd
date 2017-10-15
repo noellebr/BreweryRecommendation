@@ -39,8 +39,18 @@ names(BeersBreweries)[names(BeersBreweries) == 'Name.y'] <- 'Brewery_Name'
 
 **4. Compute the median alcohol content and international bitterness unit for each state. Plot a bar chart to compare.**
 
-*insert code explanation*
-*insert code chunk*
+Compute the median alcohol content & international bitterness unit for each state, renames columns for consistency, merges values; plot bar chart of each value.
+```{r, echo=TRUE, fig.width=12}
+medianABVbystate <- aggregate(BeersBreweries$ABV, list(BeersBreweries$State), median, na.rm=TRUE)
+names(medianABVbystate)[names(medianABVbystate) == 'Group.1'] <- 'State'
+names(medianABVbystate)[names(medianABVbystate) == 'x'] <- 'MedianABV'
+medianIBUbystate <- aggregate(BeersBreweries$IBU, list(BeersBreweries$State), median, na.rm=TRUE)
+names(medianIBUbystate)[names(medianIBUbystate) == 'Group.1'] <- 'State'
+names(medianIBUbystate)[names(medianIBUbystate) == 'x'] <- 'MedianIBU'
+medianbystate <- merge(medianABVbystate, medianIBUbystate, by='State')
+barplot(medianbystate$MedianABV, main="Median ABV by State", xlab="State", ylab="ABV", col="darkblue", names.arg=medianbystate$State, las=2)
+barplot(medianbystate$MedianIBU, main="Median IBU by State", xlab="State", ylab="IBU", col="red", names.arg=medianbystate$State, las=2)
+```
 *insert answer*
 
 **5. Which state has the maximum alcoholic (ABV) beer? Which state has the most bitter (IBU) beer?**
