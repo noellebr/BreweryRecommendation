@@ -84,9 +84,11 @@ The state that has the most bitter (IBU) beer is Oregon (OR).
 
 **6. Summary statistics for the ABV variable.**
 
-*insert code explanation*
-*insert code chunk*
-*insert answer*
+*Print out summary statistics for ABV*
+```{r, echo=TRUE}
+summary(BeersBreweries$ABV)
+```
+The ABV has a minimum of 0.001, a median of 0.056, and a max of 0.128. The mean ABV is 0.05977.
 
 **7. Is there an apparent relationship between the bitterness of the beer and its alcoholic content? Draw a scatter plot.**
 
