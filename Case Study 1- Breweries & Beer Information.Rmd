@@ -1,0 +1,55 @@
+---
+title: 'Case Study 1: Breweries & Beer Information'
+author: "Noelle Brown & Ann Nelson"
+date: "October 15, 2017"
+output: html_document
+---
+# Introduction:
+
+*Insert Intro Here*
+
+**1. How many breweries are present in each state?**
+
+*insert code explanation*
+*insert code chunk*
+*insert answer*
+
+**2. Merge beer data with the breweries data. Print the first 6 observations and the last six observations to check the merged file.**
+
+*insert code explanation*
+*insert code chunk*
+*insert answer*
+
+**3. Report the number of NA's in each column.**
+
+*insert code explanation*
+*insert code chunk*
+*insert answer*
+
+**4. Compute the median alcohol content and international bitterness unit for each state. Plot a bar chart to compare.**
+
+*insert code explanation*
+*insert code chunk*
+*insert answer*
+
+**5. Which state has the maximum alcoholic (ABV) beer? Which state has the most bitter (IBU) beer?**
+
+*insert code explanation*
+*insert code chunk*
+*insert answer*
+
+**6. Summary statistics for the ABV variable.**
+
+*insert code explanation*
+*insert code chunk*
+*insert answer*
+
+**7. Is there an apparent relationship between the bitterness of the beer and its alcoholic content? Draw a scatter plot.**
+
+*insert code explanation*
+*insert code chunk*
+*insert answer*
+
+# Conclusion:
+
+*Insert Conclusion Here*
