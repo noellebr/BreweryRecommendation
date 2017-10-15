@@ -18,3 +18,19 @@ Name: Name of the brewery.
 City: City where the brewery is located.  
 State: U.S. State where the brewery is located.  
 
+**BeersBreweries.csv:**  
+Brewery_id: Unique identifier of the brewery.  
+Beer_Name: Name of the beer.  
+Beer_ID: Unique identifier of the beer.  
+ABV: Alcohol by volume of the beer.  
+IBU: International Biterness Units of the beer.  
+Style: Style of the beer.  
+Ounces: Ounces of beer.  
+Brewery_Name: Name of the brewery.  
+City: City where the brewery is located.  
+State: U.S. State where the brewery is located.  
+
+**medianbystate:**  
+State: Unique state abbreviation.
+MedianABV: Median ABV amount for beers in that specific state.  
+MedianIBU: Median IBU level for beers in that specific state.  
