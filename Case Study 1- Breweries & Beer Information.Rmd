@@ -8,6 +8,11 @@ output: html_document
 
 *Insert Intro Here*
 
+```{r}
+Beers <- read.csv("~/Documents/Git/CaseStudy1Files/Beers.csv")
+Breweries <- read.csv("~/Documents/Git/CaseStudy1Files/Breweries.csv")
+```
+
 **1. How many breweries are present in each state?**
 
 *insert code explanation*
