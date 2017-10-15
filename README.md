@@ -31,6 +31,6 @@ City: City where the brewery is located.
 State: U.S. State where the brewery is located.  
 
 **medianbystate:**  
-State: Unique state abbreviation.
-MedianABV: Median ABV amount for beers in that specific state.  
+State: Unique state abbreviation.  
+MedianABV: Median ABV amount for beers in that specific state.   
 MedianIBU: Median IBU level for beers in that specific state.  
