@@ -8,7 +8,7 @@ output: html_document
 
 *Insert Intro Here*
 
-Import the data sets and change the column names for consistency.
+*Import the data sets and change the column names for consistency.*
 ```{r}
 Beers <- read.csv("~/Documents/Git/CaseStudy1Files/Beers.csv")
 Breweries <- read.csv("~/Documents/Git/CaseStudy1Files/Breweries.csv")
@@ -23,7 +23,7 @@ names(Breweries)[names(Breweries) == 'Brew_ID'] <- 'Brewery_id'
 
 **2. Merge beer data with the breweries data. Print the first 6 observations and the last six observations to check the merged file.**
 
-Merge the data sets and rename column names to make readable.
+*Merge the data sets and rename column names to make readable.*
 ```{r, echo=TRUE}
 BeersBreweries <- merge(Beers, Breweries, by='Brewery_id')
 names(BeersBreweries)[names(BeersBreweries) == 'Name.x'] <- 'Beer_Name'
@@ -39,7 +39,7 @@ names(BeersBreweries)[names(BeersBreweries) == 'Name.y'] <- 'Brewery_Name'
 
 **4. Compute the median alcohol content and international bitterness unit for each state. Plot a bar chart to compare.**
 
-Compute the median alcohol content & international bitterness unit for each state, renames columns for consistency, merges values; plot bar chart of each value.
+*Compute the median alcohol content & international bitterness unit for each state, renames columns for consistency, merges values; plot bar chart of each value.*
 ```{r, echo=TRUE, fig.width=12}
 medianABVbystate <- aggregate(BeersBreweries$ABV, list(BeersBreweries$State), median, na.rm=TRUE)
 names(medianABVbystate)[names(medianABVbystate) == 'Group.1'] <- 'State'
@@ -48,16 +48,39 @@ medianIBUbystate <- aggregate(BeersBreweries$IBU, list(BeersBreweries$State), me
 names(medianIBUbystate)[names(medianIBUbystate) == 'Group.1'] <- 'State'
 names(medianIBUbystate)[names(medianIBUbystate) == 'x'] <- 'MedianIBU'
 medianbystate <- merge(medianABVbystate, medianIBUbystate, by='State')
+```
+The median ABV and IBU values by state:
+```{r,echo=TRUE,fig.width=12}
+medianbystate
+```
+Barplot for median ABV by state:
+```{r,echo=TRUE,fig.width=12}
 barplot(medianbystate$MedianABV, main="Median ABV by State", xlab="State", ylab="ABV", col="darkblue", names.arg=medianbystate$State, las=2)
+```
+Barplot for median IBU by state:
+```{r,echo=TRUE,fig.width=12}
 barplot(medianbystate$MedianIBU, main="Median IBU by State", xlab="State", ylab="IBU", col="red", names.arg=medianbystate$State, las=2)
 ```
-*insert answer*
 
 **5. Which state has the maximum alcoholic (ABV) beer? Which state has the most bitter (IBU) beer?**
 
-*insert code explanation*
-*insert code chunk*
-*insert answer*
+*Finds the max ABV value from all states, finds state that the value belongs to, prints out just the state with the maximum value.*
+```{r, echo=TRUE}
+maxABV <- max(BeersBreweries$ABV, na.rm=TRUE)
+maxABVstate <- BeersBreweries[BeersBreweries$ABV == maxABV, "State"]
+maxABVstate <- maxABVstate[!is.na(maxABVstate)]
+maxABVstate
+```
+The state that has the maximum alcoholic (ABV) beer is Colorado (CO).
+
+*Finds the max IBU value from all states, finds state that the value belongs to, prints out just the state with the maximum value.*
+```{r, echo=TRUE}
+maxIBU <- max(BeersBreweries$IBU, na.rm=TRUE)
+maxIBUstate <- BeersBreweries[BeersBreweries$IBU == maxIBU, "State"]
+maxIBUstate <- maxIBUstate[!is.na(maxIBUstate)]
+maxIBUstate
+```
+The state that has the most bitter (IBU) beer is Oregon (OR).
 
 **6. Summary statistics for the ABV variable.**
 
