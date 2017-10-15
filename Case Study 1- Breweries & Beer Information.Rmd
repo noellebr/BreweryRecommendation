@@ -8,9 +8,11 @@ output: html_document
 
 *Insert Intro Here*
 
+Import the data sets and change the column names for consistency.
 ```{r}
 Beers <- read.csv("~/Documents/Git/CaseStudy1Files/Beers.csv")
 Breweries <- read.csv("~/Documents/Git/CaseStudy1Files/Breweries.csv")
+names(Breweries)[names(Breweries) == 'Brew_ID'] <- 'Brewery_id'
 ```
 
 **1. How many breweries are present in each state?**
@@ -21,8 +23,12 @@ Breweries <- read.csv("~/Documents/Git/CaseStudy1Files/Breweries.csv")
 
 **2. Merge beer data with the breweries data. Print the first 6 observations and the last six observations to check the merged file.**
 
-*insert code explanation*
-*insert code chunk*
+Merge the data sets and rename column names to make readable.
+```{r, echo=TRUE}
+BeersBreweries <- merge(Beers, Breweries, by='Brewery_id')
+names(BeersBreweries)[names(BeersBreweries) == 'Name.x'] <- 'Beer_Name'
+names(BeersBreweries)[names(BeersBreweries) == 'Name.y'] <- 'Brewery_Name'
+```
 *insert answer*
 
 **3. Report the number of NA's in each column.**
