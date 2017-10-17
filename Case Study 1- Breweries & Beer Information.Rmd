@@ -5,37 +5,58 @@ date: "October 15, 2017"
 output: html_document
 ---
 # Introduction:
+ 
+   
 
-*Insert Intro Here*
+*Import the data sets *
 
-*Import the data sets and change the column names for consistency.*
-```{r}
+```{r, echo=TRUE, Setup}
 Beers <- read.csv("~/Documents/Git/CaseStudy1Files/Beers.csv")
 Breweries <- read.csv("~/Documents/Git/CaseStudy1Files/Breweries.csv")
-names(Breweries)[names(Breweries) == 'Brew_ID'] <- 'Brewery_id'
+
+
+
 ```
 
 **1. How many breweries are present in each state?**
+*use the summary function on the State column of the Brewery dataset to produce a report of the number of breweries/state*
+```{r, echo=TRUE, Q1}
+summary(Breweries$State)
+```
+*Answer:  There are between 2-47 breweries/state across all 50 states and the Distric of Columbia*
 
-*insert code explanation*
-*insert code chunk*
-*insert answer*
 
 **2. Merge beer data with the breweries data. Print the first 6 observations and the last six observations to check the merged file.**
 
-*Merge the data sets and rename column names to make readable.*
-```{r, echo=TRUE}
+*Merge the data sets and rename column names to make readable, and facilitate the merge*
+*Column used to merge the two datasets together is Brewery_id*
+*Validate the merge and tidiness of the merged data set*
+*Write the merged dataset to an output csv file*
+```{r, echo=TRUE, Q2}
+names(Breweries)[names(Breweries) == 'Brew_ID'] <- 'Brewery_id'
+
 BeersBreweries <- merge(Beers, Breweries, by='Brewery_id')
+
 names(BeersBreweries)[names(BeersBreweries) == 'Name.x'] <- 'Beer_Name'
 names(BeersBreweries)[names(BeersBreweries) == 'Name.y'] <- 'Brewery_Name'
+
+str(BeersBreweries)
+head(BeersBreweries)
+tail(BeersBreweries)
+
+write.csv(BeersBreweries,"BeersBreweries.csv")
+
 ```
-*insert answer*
+*Answers:  The merged dataset is tidy having descriptive human readable names.*
 
 **3. Report the number of NA's in each column.**
 
-*insert code explanation*
-*insert code chunk*
-*insert answer*
+*use the sapply function to apply the sum function across the merged data set.  The sum function is summing up the count of NA using the is.na funtion on each column*
+```{r, echo=TRUE, Q3}
+sapply( BeersBreweries , function( x ) sum( is.na( x ) ) )
+
+```
+*Answer:  Only two columns have NA values, ABV and IBV, wiht 62 and 1005 occurrances, respectively.*
 
 **4. Compute the median alcohol content and international bitterness unit for each state. Plot a bar chart to compare.**
 
@@ -100,5 +121,4 @@ qplot(BeersBreweries$IBU, BeersBreweries$ABV, col=I("mediumseagreen"), main="Rel
 There seems to be a slightly positive correlation between the bitterness of the beer (IBU) and its alcoholic content (ABV), as seen in the plot above. We can say that in general, the more bitter the beer is, the higher its alcohol content.
 
 # Conclusion:
-
-*Insert Conclusion Here*
+ 
