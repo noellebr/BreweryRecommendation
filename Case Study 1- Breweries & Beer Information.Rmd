@@ -5,7 +5,7 @@ date: "October 15, 2017"
 output: html_document
 ---
 # Introduction:
-**pull text from read.me*
+*This study is marketing research for the Greenbrier Valley Brewing Company, West Virginia, who* *is interested in expanding into a new territory.  We will be determining the best location for* *extending their expertise into a new terroritory.*
    
 
 *Import the data sets *
@@ -121,4 +121,4 @@ qplot(BeersBreweries$IBU, BeersBreweries$ABV, col=I("mediumseagreen"), main="Rel
 There seems to be a slightly positive correlation between the bitterness of the beer (IBU) and its alcoholic content (ABV), as seen in the plot above. We can say that in general, the more bitter the beer is, the higher its alcohol content.
 
 # Conclusion:
- ** pull text from read.me*
+The Greenbrier Valley Brewing Company specializes in bitter beer.  Their recipe has the highest bitterness rating (IBU) in the country.  They are interested in expanding into a new region.  Our recommendation is that they extend into Maine.  This recommendation is based on the popularity of bitter beer in ME (2nd highest IBU value), which aligns to the strength of the Greenbrier Valley Brewing Company brand, and the relatively low degree of competition (9 breweries currently exist in ME) compared to other states.
