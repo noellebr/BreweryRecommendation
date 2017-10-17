@@ -4,7 +4,7 @@ This is a project created for MSDS 6306: Case Study 1 by Noelle Brown and Ann Ne
 ## Introduction:
    This study is marketing research for the “Best Brew in Town” Brewery (B2T), who is interested in expanding into a new territory.  We will be determining the best location, and the brew characteristics based on a data set of 2410 US craft beers and a Breweries dataset contains 558 US breweries.
 
-##Conclusion:
+## Conclusion:
     We recommend B2T Brewery expand into <state>.  The beer characteristics most popular in that are <> Alcohol Content and <> International Bitterness Unit.  <maybe some discussion of how this compares to the max ABV values/IBU values if there is something interesting there> or <some discussion about the relationship between ABV and IBU>.
 
 
