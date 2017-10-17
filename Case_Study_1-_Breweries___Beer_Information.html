@@ -126,6 +126,7 @@ $(document).ready(function () {
 
 <div id="introduction" class="section level1">
 <h1>Introduction:</h1>
+<p>**pull text from read.me*</p>
 <p><em>Import the data sets </em></p>
 <pre class="r"><code>Beers &lt;- read.csv(&quot;~/Documents/Git/CaseStudy1Files/Beers.csv&quot;)
 Breweries &lt;- read.csv(&quot;~/Documents/Git/CaseStudy1Files/Breweries.csv&quot;)</code></pre>
@@ -212,7 +213,7 @@ str(BeersBreweries)</code></pre>
 ##            0            0            0           62         1005 
 ##        Style       Ounces Brewery_Name         City        State 
 ##            0            0            0            0            0</code></pre>
-<p><em>Answer: Only two columns have NA values, ABV and IBV, wiht 62 and 1005 occurrances, respectively.</em></p>
+<p><em>Answer: Only two columns have NA values, ABV and IBV, with 62 and 1005 occurrances, respectively.</em></p>
 <p><strong>4. Compute the median alcohol content and international bitterness unit for each state. Plot a bar chart to compare.</strong></p>
 <p><em>Compute the median alcohol content &amp; international bitterness unit for each state, renames columns for consistency, merges values; plot bar chart of each value.</em></p>
 <pre class="r"><code>medianABVbystate &lt;- aggregate(BeersBreweries$ABV, list(BeersBreweries$State), median, na.rm=TRUE)
@@ -312,6 +313,7 @@ qplot(BeersBreweries$IBU, BeersBreweries$ABV, col=I(&quot;mediumseagreen&quot;),
 </div>
 <div id="conclusion" class="section level1">
 <h1>Conclusion:</h1>
+<p>** pull text from read.me*</p>
 </div>
 
 

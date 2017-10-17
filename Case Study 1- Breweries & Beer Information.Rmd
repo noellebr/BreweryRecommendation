@@ -5,7 +5,7 @@ date: "October 15, 2017"
 output: html_document
 ---
 # Introduction:
- 
+**pull text from read.me*
    
 
 *Import the data sets *
@@ -56,7 +56,7 @@ write.csv(BeersBreweries,"BeersBreweries.csv")
 sapply( BeersBreweries , function( x ) sum( is.na( x ) ) )
 
 ```
-*Answer:  Only two columns have NA values, ABV and IBV, wiht 62 and 1005 occurrances, respectively.*
+*Answer:  Only two columns have NA values, ABV and IBV, with 62 and 1005 occurrances, respectively.*
 
 **4. Compute the median alcohol content and international bitterness unit for each state. Plot a bar chart to compare.**
 
@@ -121,4 +121,4 @@ qplot(BeersBreweries$IBU, BeersBreweries$ABV, col=I("mediumseagreen"), main="Rel
 There seems to be a slightly positive correlation between the bitterness of the beer (IBU) and its alcoholic content (ABV), as seen in the plot above. We can say that in general, the more bitter the beer is, the higher its alcohol content.
 
 # Conclusion:
- 
+ ** pull text from read.me*
