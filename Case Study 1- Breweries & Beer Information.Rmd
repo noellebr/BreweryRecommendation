@@ -9,24 +9,21 @@ output: html_document
    
 
 *Import the data sets *
-
 ```{r, echo=TRUE, Setup}
-Beers <- read.csv("~/Documents/Git/CaseStudy1Files/Beers.csv")
-Breweries <- read.csv("~/Documents/Git/CaseStudy1Files/Breweries.csv")
-
-
-
+Beers <- read.csv("~/Documents/Git/CaseStudy1/Beers.csv")
+Breweries <- read.csv("~/Documents/Git/CaseStudy1/Breweries.csv")
 ```
 
-**1. How many breweries are present in each state?**
-*use the summary function on the State column of the Brewery dataset to produce a report of the number of breweries/state*
+**Breweries present in each state: **
+
+*Use the summary function on the State column of the Brewery dataset to produce a report of the number of breweries/state*
 ```{r, echo=TRUE, Q1}
 summary(Breweries$State)
 ```
-*Answer:  There are between 2-47 breweries/state across all 50 states and the Distric of Columbia*
+*There are between 2-47 breweries/state across all 50 states and the Distric of Columbia*
 
 
-**2. Merge beer data with the breweries data. Print the first 6 observations and the last six observations to check the merged file.**
+**First 6 observations and the last six observations of the merged beer and breweries data: **
 
 *Merge the data sets and rename column names to make readable, and facilitate the merge*
 *Column used to merge the two datasets together is Brewery_id*
@@ -47,18 +44,18 @@ tail(BeersBreweries)
 write.csv(BeersBreweries,"BeersBreweries.csv")
 
 ```
-*Answers:  The merged dataset is tidy having descriptive human readable names.*
+*The merged dataset is tidy having descriptive human readable names.*
 
-**3. Report the number of NA's in each column.**
+**The number of NA's in each column: **
 
-*use the sapply function to apply the sum function across the merged data set.  The sum function is summing up the count of NA using the is.na funtion on each column*
+*Use the sapply function to apply the sum function across the merged data set.  The sum function is summing up the count of NA using the is.na funtion on each column*
 ```{r, echo=TRUE, Q3}
 sapply( BeersBreweries , function( x ) sum( is.na( x ) ) )
 
 ```
-*Answer:  Only two columns have NA values, ABV and IBV, with 62 and 1005 occurrances, respectively.*
+*Only two columns have NA values, ABV and IBV, with 62 and 1005 occurrances, respectively.*
 
-**4. Compute the median alcohol content and international bitterness unit for each state. Plot a bar chart to compare.**
+**Median alcohol content and international bitterness unit for each state: **
 
 *Compute the median alcohol content & international bitterness unit for each state, renames columns for consistency, merges values; plot bar chart of each value.*
 ```{r, echo=TRUE, fig.width=12}
@@ -83,7 +80,7 @@ Barplot for median IBU by state:
 barplot(medianbystate$MedianIBU, main="Median IBU by State", xlab="State", ylab="IBU", col="cadetblue4", names.arg=medianbystate$State, las=2)
 ```
 
-**5. Which state has the maximum alcoholic (ABV) beer? Which state has the most bitter (IBU) beer?**
+**The states with the maximum alcoholic (ABV) beer and the most bitter (IBU) beer: **
 
 *Finds the max ABV value from all states, finds state that the value belongs to, prints out just the state with the maximum value.*
 ```{r, echo=TRUE}
@@ -103,15 +100,15 @@ maxIBUstate
 ```
 The state that has the most bitter (IBU) beer is Oregon (OR).
 
-**6. Summary statistics for the ABV variable.**
+**Summary statistics for the ABV: **
 
 *Print out summary statistics for ABV*
 ```{r, echo=TRUE}
 summary(BeersBreweries$ABV)
 ```
-The ABV has a minimum of 0.001, a median of 0.056, and a max of 0.128. The mean ABV is 0.05977.
+The ABV for all of the beers has a minimum of 0.001, a median of 0.056, and a max of 0.128. The mean ABV is 0.05977.
 
-**7. Is there an apparent relationship between the bitterness of the beer and its alcoholic content? Draw a scatter plot.**
+**Relationship between the bitterness of the beer and its alcoholic content: **
 
 *Create scatterplot of IBU vs. ABV*
 ```{r,echo=TRUE,fig.width=12}
@@ -121,4 +118,4 @@ qplot(BeersBreweries$IBU, BeersBreweries$ABV, col=I("mediumseagreen"), main="Rel
 There seems to be a slightly positive correlation between the bitterness of the beer (IBU) and its alcoholic content (ABV), as seen in the plot above. We can say that in general, the more bitter the beer is, the higher its alcohol content.
 
 # Conclusion:
-The Greenbrier Valley Brewing Company specializes in bitter beer.  Their recipe has the highest bitterness rating (IBU) in the country.  They are interested in expanding into a new region.  Our recommendation is that they extend into Maine.  This recommendation is based on the popularity of bitter beer in ME (2nd highest IBU value), which aligns to the strength of the Greenbrier Valley Brewing Company brand, and the relatively low degree of competition (9 breweries currently exist in ME) compared to other states.
+The Greenbrier Valley Brewing Company specializes in bitter beer.  Their beer recipe has the second highest median bitterness rating (IBU) in the country compared to other states.  They are interested in expanding into a new region.  Our recommendation is that they extend into Maine.  This recommendation is based on the popularity of bitter beer in ME (highest median IBU value), which aligns to the strength of the Greenbrier Valley Brewing Company brand, and the relatively low degree of competition (9 breweries currently exist in ME) compared to other states.
