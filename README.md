@@ -6,7 +6,7 @@ This is a project created for MSDS 6306: Case Study 1 by Noelle Brown and Ann Ne
 
 ## Conclusion:
 ## Conclusion:
-*The Greenbrier Valley Brewing Company specializes in bitter beer.  Their recipe has the highest bitterness rating (IBU) in the country.  They are interested in expanding into a new region.  Our recommendation is that they extend into Maine.  This recommendation is based on the popularity of bitter beer in ME (2nd highest IBU value), which aligns to the strength of the Greenbrier Valley Brewing Company brand, and the relatively low degree of competition (9 breweries currently exist in ME) compared to other states.*
+*The Greenbrier Valley Brewing Company specializes in bitter beer. Their beer recipe has the second highest median bitterness rating (IBU) in the country compared to other states. They are interested in expanding into a new region. Our recommendation is that they extend into Maine. This recommendation is based on the popularity of bitter beer in ME (highest median IBU value), which aligns to the strength of the Greenbrier Valley Brewing Company brand, and the relatively low degree of competition (9 breweries currently exist in ME) compared to other states.*
   
 
 # Codebook
