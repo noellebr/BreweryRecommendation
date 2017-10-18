@@ -5,7 +5,6 @@ This is a project created for MSDS 6306: Case Study 1 by Noelle Brown and Ann Ne
    This study is marketing research for the Greenbrier Valley Brewing Company, West Virginia, who is interested in expanding into a new territory.  We will be determining the best location for extending their expertise into a new terroritory.
 
 ## Conclusion:
-## Conclusion:
 *The Greenbrier Valley Brewing Company specializes in bitter beer. Their beer recipe has the second highest median bitterness rating (IBU) in the country compared to other states. They are interested in expanding into a new region. Our recommendation is that they extend into Maine. This recommendation is based on the popularity of bitter beer in ME (highest median IBU value), which aligns to the strength of the Greenbrier Valley Brewing Company brand, and the relatively low degree of competition (9 breweries currently exist in ME) compared to other states.*
   
 
@@ -24,7 +23,7 @@ Ounces: Ounces of beer.
 Brewery_ID: Unique identifier of the brewery.  
 Name: Name of the brewery.  
 City: City where the brewery is located.  
-State: U.S. State where the brewery is located.  '
+State: U.S. State where the brewery is located.  
 
 **BeersBreweries.csv**
 Description: Output file of merged dataframes
